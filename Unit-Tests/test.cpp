@@ -1,6 +1,22 @@
 #include "pch.h"
+#include "../Cpp-Multithreading-Playground/Semaphore_Binary.h"
 
-TEST(TestCaseName, TestName) {
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
+class SemaphoreBinaryBasicTest : public ::testing::Test
+{
+protected:
+    Semaphore_Binary s;
+
+    SemaphoreBinaryBasicTest() : s{}
+    {}
+};
+
+TEST_F(SemaphoreBinaryBasicTest, BasicUpDown) {
+    s.down();
+    s.up();
+}
+
+int main(int argc, char **argv)
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

@@ -13,6 +13,8 @@ protected:
 public:
     Semaphore_Binary() : monitor{}, isUsed{ false }
     {}
+    Semaphore_Binary(bool initialValue) : monitor{}, isUsed{ !initialValue }
+    {}
 
     Semaphore_Binary(const Semaphore_Binary &) = delete;
     Semaphore_Binary &operator=(const Semaphore_Binary &) = delete;
