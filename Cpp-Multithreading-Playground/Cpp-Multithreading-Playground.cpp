@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include "Monitor.h"
 #include "Semaphore_Binary.h"
 
 int main()

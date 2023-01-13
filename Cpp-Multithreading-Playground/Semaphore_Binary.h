@@ -1,19 +1,19 @@
 #pragma once
 
-#include "Monitor.h"
+#include <mutex>
+#include <condition_variable>
 
 class Semaphore_Binary
 {
 protected:
-    using monitor_type = Monitor<std::mutex>;
-
-    monitor_type monitor;
+    std::mutex m;
+    std::condition_variable cond;
     bool isUsed;
 
 public:
-    Semaphore_Binary() : monitor{}, isUsed{ false }
+    Semaphore_Binary() : m{}, cond{}, isUsed{ false }
     {}
-    Semaphore_Binary(bool initialValue) : monitor{}, isUsed{ !initialValue }
+    Semaphore_Binary(bool initialValue) : m{}, cond{}, isUsed{ !initialValue }
     {}
 
     Semaphore_Binary(const Semaphore_Binary &) = delete;

@@ -2,20 +2,20 @@
 
 void Semaphore_Binary::down()
 {
-    std::lock_guard<monitor_type> lock{ monitor };
+    std::unique_lock<std::mutex> lock{ m };
     while (isUsed)
     {
-        monitor.wait();
+        cond.wait(lock);
     }
     isUsed = true;
 }
 
 void Semaphore_Binary::up()
 {
-    std::lock_guard<monitor_type> lock{ monitor };
+    std::lock_guard<std::mutex> lock{ m };
     if (isUsed)
     {
         isUsed = false;
-        monitor.notify_one();
+        cond.notify_one();
     }
 }
