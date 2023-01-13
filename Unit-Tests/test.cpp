@@ -51,36 +51,40 @@ TEST(SemaphoreBinaryTests, ExecutionOrder2)
 {
     auto f = [](int n)
     {
-        Semaphore_Binary s1{ true }, s2{ false };
-        int result{ 0 }, no{ n };
-        std::thread t_adv{ [&s1, &s2, &n]
+        for (int i = 0; i < 30; ++i)
         {
-            while (n >= 0)
+            Semaphore_Binary s1{ true }, s2{ false };
+            int result{ 0 };
+            int k = n;
+            std::thread t_adv{ [&s1, &s2, &k]
             {
-                s1.down();
-                n--;
-                s2.up();
-            }
-            s1.down();
-        } };
-        std::thread t_adder{ [&s1, &s2, &n, &result]
-        {
-            while (true)
-            {
-                s2.down();
-                if (n < 0)
+                while (k >= 0)
                 {
-                    s1.up();
-                    break;
+                    s1.down();
+                    k--;
+                    s2.up();
                 }
-                result += 2*n + 1;
-                s1.up();
-            }
-        } };
+                s1.down();
+            } };
+            std::thread t_adder{ [&s1, &s2, &k, &result]
+            {
+                while (true)
+                {
+                    s2.down();
+                    if (k < 0)
+                    {
+                        s1.up();
+                        break;
+                    }
+                    result += 2*k + 1;
+                    s1.up();
+                }
+            } };
 
-        t_adder.join();
-        t_adv.join();
-        EXPECT_EQ(no*no, result);
+            t_adder.join();
+            t_adv.join();
+            EXPECT_EQ(n*n, result);
+        }
     };
 
     f(0);
