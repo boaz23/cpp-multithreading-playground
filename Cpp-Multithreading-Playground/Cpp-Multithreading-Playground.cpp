@@ -2,8 +2,8 @@
 //
 
 #include <iostream>
-#include "Semaphore_Binary.h"
 #include "Semaphore.h"
+#include "QueueBlockingArray.h"
 
 int main()
 {

@@ -18,18 +18,18 @@
     <ClCompile Include="Cpp-Multithreading-Playground.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Semaphore_Binary.cpp">
     <ClCompile Include="Semaphore.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Semaphore_Binary.h">
     <ClInclude Include="Semaphore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="QueueArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueBlockingArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
