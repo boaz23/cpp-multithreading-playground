@@ -3,13 +3,11 @@
 
 #include <iostream>
 #include "Semaphore_Binary.h"
+#include "Semaphore.h"
 
 int main()
 {
-    Semaphore_Binary s{};
-    s.down();
     std::cout << "Hello World!\n";
-    s.up();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

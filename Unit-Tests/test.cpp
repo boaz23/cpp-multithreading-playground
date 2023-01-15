@@ -1,11 +1,11 @@
 #include "pch.h"
 #include <thread>
-#include "../Cpp-Multithreading-Playground/Semaphore_Binary.cpp"
+#include "../Cpp-Multithreading-Playground/Semaphore.cpp"
 
 class SemaphoreBinaryBasicTest : public ::testing::Test
 {
 protected:
-    Semaphore_Binary s;
+    Semaphore<1> s;
 
     SemaphoreBinaryBasicTest() : s{}
     {}
@@ -27,7 +27,7 @@ TEST(SemaphoreBinaryTests, ExecutionOrder1)
 {
     for (int i = 0; i < 30; ++i)
     {
-        Semaphore_Binary s{ false };
+        Semaphore<1> s{ false };
         int n{ 5 }, no{ n }, nm{ n + 1 };
         std::thread t1{[&s, &n, &nm]()
         {
@@ -53,7 +53,7 @@ TEST(SemaphoreBinaryTests, ExecutionOrder2)
     {
         for (int i = 0; i < 30; ++i)
         {
-            Semaphore_Binary s1{ true }, s2{ false };
+            Semaphore<1> s1{ true }, s2{ false };
             int result{ 0 };
             int k = n;
             std::thread t_adv{ [&s1, &s2, &k]
