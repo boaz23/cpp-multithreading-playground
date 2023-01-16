@@ -1,7 +1,9 @@
 #include "pch.h"
 #include <thread>
-#include "../Cpp-Multithreading-Playground/Semaphore.cpp"
+#include "Semaphore.cpp"
 
+namespace SemaphoreTests
+{
 class SemaphoreBinaryBasicTest : public ::testing::Test
 {
 protected:
@@ -11,7 +13,8 @@ protected:
     {}
 };
 
-TEST_F(SemaphoreBinaryBasicTest, BasicUpDown1) {
+TEST_F(SemaphoreBinaryBasicTest, BasicUpDown1)
+{
     s.down();
     s.up();
 }
@@ -29,16 +32,16 @@ TEST(SemaphoreBinaryTests, ExecutionOrder1)
     {
         Semaphore<1> s{ false };
         int n{ 5 }, no{ n }, nm{ n + 1 };
-        std::thread t1{[&s, &n, &nm]()
+        std::thread t1{ [&s, &n, &nm]()
         {
             nm = n;
             s.up();
-        }};
-        std::thread t2{[&s, &n]()
+        } };
+        std::thread t2{ [&s, &n]()
         {
             s.down();
             n--;
-        }};
+        } };
 
         t1.join();
         t2.join();
@@ -91,12 +94,4 @@ TEST(SemaphoreBinaryTests, ExecutionOrder2)
     f(1);
     f(5);
 }
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    int exitCode = RUN_ALL_TESTS();
-    //std::cout << "Press any key to exit . . . ";
-    //std::cin.ignore();
-    return exitCode;
 }

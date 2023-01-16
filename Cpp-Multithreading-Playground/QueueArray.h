@@ -40,13 +40,21 @@ public:
 
     void enqueue(const T& item)
     {
+    #if _DEBUG
+        buffer.at(indices_cycle_add<N>(head, size)) = item;
+    #else
         buffer[indices_cycle_add<N>(head, size)] = item;
+    #endif
         ++size;
     }
 
     void dequeue(T& result)
     {
+    #if _DEBUG
+        result = buffer.at(head);
+    #else
         result = buffer[head];
+    #endif
         head = indices_cycle_next<N>(head);
         --size;
     }
