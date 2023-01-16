@@ -21,6 +21,9 @@
     <ClCompile Include="Semaphore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PromisesPlayground.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Semaphore.h">
@@ -30,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="QueueBlockingArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PromisesPlayground.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

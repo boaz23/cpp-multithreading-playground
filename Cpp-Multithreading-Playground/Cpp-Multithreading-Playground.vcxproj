@@ -130,9 +130,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cpp-Multithreading-Playground.cpp" />
+    <ClCompile Include="PromisesPlayground.cpp" />
     <ClCompile Include="Semaphore.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PromisesPlayground.h" />
     <ClInclude Include="QueueArray.h" />
     <ClInclude Include="QueueBlockingArray.h" />
     <ClInclude Include="Semaphore.h" />

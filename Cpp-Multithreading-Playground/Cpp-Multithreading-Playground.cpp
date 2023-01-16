@@ -4,10 +4,12 @@
 #include <iostream>
 #include "Semaphore.h"
 #include "QueueBlockingArray.h"
+#include "PromisesPlayground.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+    promises_playground::run();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
