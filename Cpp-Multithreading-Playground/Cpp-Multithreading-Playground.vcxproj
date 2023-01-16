@@ -129,11 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Barrier_ProducerConsumer.cpp" />
     <ClCompile Include="Cpp-Multithreading-Playground.cpp" />
     <ClCompile Include="PromisesPlayground.cpp" />
     <ClCompile Include="Semaphore.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Barrier_ProducerConsumer.h" />
     <ClInclude Include="PromisesPlayground.h" />
     <ClInclude Include="QueueArray.h" />
     <ClInclude Include="QueueBlockingArray.h" />

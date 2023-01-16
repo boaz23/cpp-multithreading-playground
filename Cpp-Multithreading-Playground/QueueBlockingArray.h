@@ -17,6 +17,9 @@ public:
     QueueBlockingArray() : queue{}, m{}, s_insert{}, s_consume{ 0 }
     {}
 
+    QueueBlockingArray(const QueueBlockingArray &) = delete;
+    QueueBlockingArray &operator=(const QueueBlockingArray &) = delete;
+
     void insert(const T &item)
     {
         s_insert.down();
