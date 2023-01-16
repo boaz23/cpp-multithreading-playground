@@ -5,11 +5,12 @@
 #include "Semaphore.h"
 #include "QueueBlockingArray.h"
 #include "PromisesPlayground.h"
+#include "PrintWords.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
-    promises_playground::run();
+    print_words::run();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

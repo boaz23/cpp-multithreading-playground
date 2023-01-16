@@ -27,6 +27,9 @@
     <ClCompile Include="Barrier_ProducerConsumer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrintWords.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Semaphore.h">
@@ -44,5 +47,11 @@
     <ClInclude Include="Barrier_ProducerConsumer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PrintWords.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
   </ItemGroup>
 </Project>

@@ -129,17 +129,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PrintWords.cpp" />
     <ClCompile Include="Barrier_ProducerConsumer.cpp" />
     <ClCompile Include="Cpp-Multithreading-Playground.cpp" />
     <ClCompile Include="PromisesPlayground.cpp" />
     <ClCompile Include="Semaphore.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PrintWords.h" />
     <ClInclude Include="Barrier_ProducerConsumer.h" />
     <ClInclude Include="PromisesPlayground.h" />
     <ClInclude Include="QueueArray.h" />
     <ClInclude Include="QueueBlockingArray.h" />
     <ClInclude Include="Semaphore.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
